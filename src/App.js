@@ -1,4 +1,4 @@
-
+import React from 'react'
 import IntroInput from './components/IntroInput'
 import Intro from './components/Intro'
 import Posts from './components/Posts'
