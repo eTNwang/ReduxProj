@@ -4,18 +4,18 @@ import Intro from './components/Intro'
 import Posts from './components/Posts'
 import PostInput from './components/PostInput'
 
-
 export function App() {
   return (
     <>
-      <IntroInput/>
-      <Intro/>
+      <IntroInput />
+      <Intro />
 
-      <PostInput/>
-      <Posts/>      
+      <PostInput />
+      <Posts />
       <br />
 
-      
     </>
   )
 }
+
+export default App

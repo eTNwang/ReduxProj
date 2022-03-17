@@ -2,11 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updatePost } from '../actions'
 
-const PostEdit = ({
-   postid, updatePost
-   }) => {
+const PostEdit = ({ postid }) => {
   const [state, setState] = React.useState({
-    postid: postid,
+    postid,
     name: '',
     postText: '',
     postImage: '',
@@ -63,7 +61,7 @@ const PostEdit = ({
 }
 
 const mapDispatchToProps = dispatch => ({
-    updatePost: (postid, name, postText, postImage) => dispatch(updatePost(postid, name,  postText, postImage) ),
-  })
+  updatePost: (postid, name, postText, postImage) => dispatch(updatePost(postid, name, postText, postImage)),
+})
 
 export default connect(null, mapDispatchToProps)(PostEdit)

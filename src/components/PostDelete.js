@@ -2,23 +2,20 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { removePost } from '../actions'
 
-const PostDelete = ({
-  postid, removePost,
-}) => {
+const PostDelete = ({ postid }) => {
   const [state, setState] = React.useState({
     postid,
     name: '',
     postText: '',
-    postImage: '', 
+    postImage: '',
   })
 
   const clickhandle = e => {
-    console.log('clicked')
     removePost(postid, state.name, state.postText, state.postImage)
   }
 
   return (
-    <button onClick={() => clickhandle()}> Delete Post </button>
+    <button type="submit" onClick={() => clickhandle()}> Delete Post </button>
   )
 }
 

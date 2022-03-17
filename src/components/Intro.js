@@ -4,11 +4,11 @@ import s from 'styled-components'
 
 const Intro = ({ intro }) => (
   <>
-  
+
     <div>{ intro.name }</div>
     <div>{ intro.introText }</div>
     <div>{ intro.introImage }</div>
-  </> 
+  </>
 )
 
 const mapStateToProps = state => ({ intro: state.intro })

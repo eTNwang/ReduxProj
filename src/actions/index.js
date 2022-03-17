@@ -6,7 +6,7 @@ export const ADD_INTRO = 'ADD_INTRO'
 export const REMOVE_POST = 'REMOVE_POST'
 export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 
-let tempid = 0;
+let tempid = 0
 export const addPost = (name, postText, postImage) => ({
   type: ADD_POST,
   postid: tempid++,
@@ -25,7 +25,6 @@ export const removePost = (postid, name, postText, postImage) => ({
 
 })
 
-
 export const updatePost = (postid, name, postText, postImage) => ({
   type: UPDATE_POST,
   postid,
@@ -42,28 +41,8 @@ export const addIntro = (name, introText, introImage) => ({
   introImage,
 })
 
-
 export const STATUS_MAP = {
   ALL: 'ALL',
   COMPLETED: 'COMPLETED',
-  INCOMPLETE: 'INCOMPLETE'
+  INCOMPLETE: 'INCOMPLETE',
 }
-
-let id = 0
-
-export const addTodo = text => ({
-  type: ADD_TO_DO,
-  text,
-  id: id++
-})
-
-export const toggleTodoStatus = id => ({
-  type: TOGGLE_TODO_STATUS,
-  id
-})
-
-export const toggleStatus = status => ({
-  type: TOGGLE_STATUS,
-  status
-})
-
