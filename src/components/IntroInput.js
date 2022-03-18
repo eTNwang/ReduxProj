@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import s from 'styled-components'
 import { addIntro } from '../actions'
 
-const IntroInput = ({ intro }) => {
+const IntroInput = ({ addIntro: addIntro2, intro }) => {
   const tracker = {
     name: 'Enter website name',
     introText: 'Enter Description',
@@ -27,7 +27,7 @@ const IntroInput = ({ intro }) => {
 
   const submitinputs = e => {
     e.preventDefault()
-    addIntro(state.name, state.introText, state.introImage)
+    addIntro2(state.name, state.introText, state.introImage)
     const { name, introText, introImage } = state
     tracker.name = name
     tracker.introText = introText
@@ -79,8 +79,7 @@ const IntroInput = ({ intro }) => {
           onChange={updateinputs}
         />
         <br />
-        <input type="submit" disabled={!state.name || !state.introText} value="Submit" />
-        <button type="submit" onClick={() => clickhandle()}> Cancel </button>
+        <input type="submit" value="Submit" />
       </form>
     </Wrapper>
   )
@@ -93,6 +92,6 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(IntroInput)
 
 const Wrapper = s.div`
-  border: 10px solid red;
+  border: 10px solid black;
   padding: 5;
 `

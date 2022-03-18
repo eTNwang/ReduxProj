@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { removePost } from '../actions'
 
-const PostDelete = ({ postid }) => {
+const PostDelete = ({ removePost: removePost2, postid }) => {
   const [state, setState] = React.useState({
     postid,
     name: '',
@@ -11,7 +11,7 @@ const PostDelete = ({ postid }) => {
   })
 
   const clickhandle = e => {
-    removePost(postid, state.name, state.postText, state.postImage)
+    removePost2(postid, state.name, state.postText, state.postImage)
   }
 
   return (

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import s from 'styled-components'
 import { addPost } from '../actions'
 
-const PostInput = () => {
+const PostInput = ({ addPost: addPost2 }) => {
   const tracker = {
     name: 'Enter post name',
     postText: 'Enter post description',
@@ -28,7 +28,7 @@ const PostInput = () => {
   const submitinputs = e => {
     // console.log(postid)
     e.preventDefault()
-    addPost(state.name, state.postText, state.postImage)
+    addPost2(state.name, state.postText, state.postImage)
   }
 
   const clickhandle = e => {
@@ -68,8 +68,7 @@ const PostInput = () => {
           onChange={updateinputs}
         />
         <br />
-        <input type="submit" disabled={!state.name || !state.postText} value="Submit" />
-        <button type="submit" onClick={() => clickhandle()}> Cancel </button>
+        <input type="submit" value="Submit" />
       </form>
     </Wrapper>
   )
@@ -82,6 +81,6 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(PostInput)
 
 const Wrapper = s.div`
-  border: 10px solid green;
+  border: 10px solid grey;
   padding: 5;
 `
